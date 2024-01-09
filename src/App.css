@@ -31,7 +31,8 @@ p {
 }
 button {
   text-decoration: none;
-  background-color: #9C27B0;
+  background-color: #89119D;
+  border: none;
 }
 img {
   width: 100%;
