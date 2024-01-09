@@ -1,12 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx';
+import NavBar from './components/NavBar/NavBar.jsx';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hola mundo </h1>
+    <>
+    <div className='navegacion-carrito'>
+      <NavBar />
+      <ItemListContainer greeting={'Hola a todos'} />
     </div>
+    </>
   );
 }
-
 export default App;
