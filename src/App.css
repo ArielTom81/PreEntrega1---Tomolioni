@@ -41,7 +41,7 @@ img {
   max-width: 120rem;
   margin: 0 auto;
 }
-h1, h2, h3 {
+h1, h2, h3, li {
   text-align: center;
   color: var(--secundario);
   font-family: var(--fuentePrincipal);
@@ -55,7 +55,9 @@ h2 {
 h3 {
   font-size: 2.4rem;
 }
-
+h4 {
+  text-decoration-style: none;
+}
 
 .App {
   text-align: center;

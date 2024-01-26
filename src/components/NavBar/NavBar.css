@@ -10,8 +10,20 @@
     font-family: var(--fuentePrincipal);
     color: var(--blanco);
     font-size: 3rem;
+    text-decoration: none;
 }
 .navegacion__enlace--activo,
 .navegacion__enlace:hover {
     color: var(--secundario);
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+Link {
+    text-decoration: none;
+    background-color: #89119D;
+    border: none;
 }

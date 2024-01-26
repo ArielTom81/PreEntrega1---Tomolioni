@@ -1,0 +1,11 @@
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}

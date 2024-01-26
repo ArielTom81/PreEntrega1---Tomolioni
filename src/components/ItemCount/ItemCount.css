@@ -1,0 +1,16 @@
+h3{
+    margin: 0;
+}
+
+.item-count{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.item-button{
+    width: 100px;
+    color: #FFCE00;
+    font-size: 30px;
+}
