@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Mi proyecto con React y create-react-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Este es mi proyecto para la comisión 49965 de Coderhouse
 
-## Available Scripts
+#### Es una página de un e-commerce de remeras
 
-In the project directory, you can run:
+-----
+* En este e-commerce creé una página principal donde están todas las remeras, con sus respectivos precios. 
+En esta página puedo elegir cada una de ellas o hacer un filtro por talle, ya sea de adulto o de niño.
 
-### `npm start`
+![alt text](image-1.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* En el NavBar podemos elegir entre 3 páginas:
+ 
+1. La misma tienda.
+2. Una página nosotros (donde simulo contar la historia de la tienda y doy un par de tips sobre porque conviene comprar con nosotros).
+3. Una imagen de un carrito de compras (el cual aparece vacío, pero al ir agregando items, nos va diciendo la cantidad que tenemos en el mismo).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+----
+Al clickear sobre cada remera nos lleva a otra página donde podemos seleccionar la cantidad de las mismas y al hacer click sobre el botón agregar al carrito, automáticamente se agrega esa cantidad al ícono del carrito.
+![alt text](image-2.png)
 
-### `npm test`
+------
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Al seleccionar el carrito, nos lleva a la página del mismo y en ella podemos, eliminar de a una remera, eliminarlas todas, vaciar el carrito o terminar nuestra compra.
 
-### `npm run build`
+Si elegimos vaciar el carrito o eliminamos todos los ítems, nos muestra el carrito vacío y nos da la posibilidad de volver a la página de inicio.
+![alt text](image-4.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Si seleccionamos terminar compra nos redirige a una página que es un formulario donde completamos unos datos y los mismos son almacenados en una base de datos que realizamos en Firebase.
+![alt text](image-3.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-----
+En Firebase hay 2 colecciones:
+* Una llamada remeras donde guardamos los ítems, con su precio, cantidad en stock, talle, descripción y su imagen (la cual está guardada en el storage de Firebase).
+* La otra llamada order, donde se guardan los datos del comprador, nombre, email, teléfono y donde además se le asigna un id.
+![alt text](image-5.png)
