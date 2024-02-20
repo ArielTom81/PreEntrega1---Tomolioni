@@ -27,6 +27,10 @@
     margin: 0 auto;
 }
 
+.boton:hover{
+    cursor: pointer;
+}
+
 
 
 

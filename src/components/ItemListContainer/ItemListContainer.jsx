@@ -1,34 +1,30 @@
-import { pedirDatos, pedirDatosCategory } from '../../helpers/pedirDatos';
 import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList';
 import { useParams} from 'react-router-dom';
-import Spinners from '../commons/Spinners/Spinners';
+
+import { collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 function ItemListContainer( {greeting}) {
 
 const [productos, setProductos] = useState([]);
-const {categoryTalle} = useParams();
-const [isLoading, setIsLoading] = useState(false);
+const categoryTalle = useParams().categoryTalle;
 
+useEffect(() =>{
+  const db = getFirestore()
 
-useEffect(() => {
-    const fetchRemeras = async () =>{
-      const filtrarTalle = categoryTalle ? pedirDatosCategory : pedirDatos
-      setIsLoading(true);
-      try {
-        const res = await filtrarTalle(categoryTalle);
-        setProductos(res);
-        setIsLoading(false);
-      } catch (err) {
-        console.log(err.message);
-        setIsLoading(false);
-      }
-    };
-    fetchRemeras();
-}, [categoryTalle, setIsLoading]);
+  const itemsCollection = collection(db, "Remeras")
 
-  if(isLoading) return <Spinners isLoading={isLoading} />
+  const q = categoryTalle ? query(itemsCollection, where("category", "==", categoryTalle)) : itemsCollection;
+
+  getDocs(q).then((snapshot) => {
+    setProductos(snapshot.docs.map((doc) =>{
+      return { ...doc.data(), id: doc.id}
+    }))
+    
+  })
+}, [categoryTalle])
+
   return (
     <div className='contenedor'>
       <h2> {greeting} </h2>

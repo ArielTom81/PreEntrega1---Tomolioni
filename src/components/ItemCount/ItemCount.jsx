@@ -1,25 +1,17 @@
+import React from 'react'
+import Button from '../commons/Button/Button'
 import './ItemCount.css'
-import {useState} from 'react'
 
-const ItemCount = () => {
-    const [cantidad, setCantidad] = useState(0)
-
-    const suma = () => {
-        setCantidad(cantidad + 1)
-    }
-
-    const resta = () => {
-      if (cantidad > 0) {
-        setCantidad(cantidad - 1)
-      }
-
-    }
+const ItemCount = ( {cantidad, handleRestar, handleSumar, handleAgregar} ) => {
 
   return (
-    <div className='item-count'>
-        <button className='item-button' onClick={suma}>+</button>
+    <div>
+      <div className="item-count">
+        <button className='item-button' onClick={handleRestar}>-</button>
         <h3>{cantidad}</h3>
-        <button className='item-button' onClick={resta}>-</button>
+        <button className='item-button' onClick={handleSumar}>+</button>
+      </div>
+      <Button onClick={handleAgregar}>Agregar al carrito</Button>
     </div>
   )
 }

@@ -5,11 +5,30 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDN3qTCdmOmPIJbuz71zF3-0iYfKyEKoaQ",
+  authDomain: "tienda-de-remeras.firebaseapp.com",
+  projectId: "tienda-de-remeras",
+  storageBucket: "tienda-de-remeras.appspot.com",
+  messagingSenderId: "620959610566",
+  appId: "1:620959610566:web:f21b5bdf9cfbb0b11ac9c7"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+        <App />
     </BrowserRouter>
   </React.StrictMode>
 );

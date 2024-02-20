@@ -1,3 +1,4 @@
+import React from 'react'
 import Item from '../Item/Item'
 import './ItemList.css'
 import { Link } from 'react-router-dom'
@@ -11,11 +12,11 @@ const ItemList = ({productos}) => {
           <Link className='producto__precio'  to='/category/Talles adultos'>Talles Adultos</Link>
         </ul>
         <div className='grid'>
-            {productos.map((prod) => <Link style={{ textDecoration:'none' }} to={`/Item/${prod.id}`}> <Item producto={prod} key={prod.id} /> </Link>)
+            {productos.map((prod) => <Link key={prod.id} style={{ textDecoration:'none' }} to={`/Item/${prod.id}`}> <Item producto={prod} /> </Link>)
             }
         </div>
     </div>
   )
 }
 
-export default ItemList
+export default React.memo(ItemList) 

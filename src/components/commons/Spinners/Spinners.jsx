@@ -15,7 +15,6 @@ function Spinners ( {isLoading} ) {
         loading={isLoading}
         cssOverride={override}
         aria-label="Loading Spinner"
-        data-testId="loader"
         />
     </div>
     )
