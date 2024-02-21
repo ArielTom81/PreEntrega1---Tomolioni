@@ -6,10 +6,10 @@ const ItemCount = ( {cantidad, handleRestar, handleSumar, handleAgregar} ) => {
 
   return (
     <div>
-      <div className="item-count">
-        <button className='item-button' onClick={handleRestar}>-</button>
+      <div className='item-count'>
+        <Button className='item-button' onClick={handleRestar}>-</Button>
         <h3>{cantidad}</h3>
-        <button className='item-button' onClick={handleSumar}>+</button>
+        <Button className='item-button' onClick={handleSumar}>+</Button>
       </div>
       <Button onClick={handleAgregar}>Agregar al carrito</Button>
     </div>

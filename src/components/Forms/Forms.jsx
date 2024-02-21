@@ -7,13 +7,11 @@ import Button from '../commons/Button/Button'
 
 const Forms = () => {
 
-const { carrito, precioTotal } = useContext(CartContext);
-
+const { carrito, precioTotal, } = useContext(CartContext);
 const [orderId, setOrderId] = useState(null)
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
 const [phone, setPhone] = useState('')
-
 const db = getFirestore();
 
 const handleSubmit = (e) =>{
@@ -38,19 +36,17 @@ const handleSubmit = (e) =>{
     addDoc(ordersCollection, order).then(({ id }) =>{
         setOrderId(id)
     })
-
 }
 
 return (
     <>
         <h2>Enviando ordenes</h2>
         <form className='cart' onSubmit={handleSubmit}>
-            <input type="text" placeholder='Nombre' onChange={(e)=> setName(e.target.value)} />
-            <input type="email" placeholder='Email' onChange={(e)=> setEmail(e.target.value)} />
-            <input type="number" placeholder='Telefono' onChange={(e)=> setPhone(e.target.value)} />
-            <Button className='boton' type='submit'>Enviar</Button>
+            <input type='text' placeholder='Nombre' onChange={(e)=> setName(e.target.value)} />
+            <input type='email' placeholder='Email' onChange={(e)=> setEmail(e.target.value)} />
+            <input type='number' placeholder='Telefono' onChange={(e)=> setPhone(e.target.value)} />
+            <Button type='submit'>Enviar</Button>
         </form>
-        
         <h3>Order id: {orderId}</h3>
     </>
 )

@@ -9,7 +9,7 @@ const Item = ( {producto} ) => {
         <div>
             <h4 className='producto__nombre'>{title}</h4>
             <p className='producto__precio'>${price}</p>
-            <p className="producto__precio">{category}</p>
+            <p className='producto__precio'>{category}</p>
         </div>
     </div>
   )

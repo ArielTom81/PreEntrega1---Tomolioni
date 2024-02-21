@@ -18,7 +18,6 @@ useEffect(() => {
   getDoc(oneItem).then((snapshot) =>{
     if (snapshot.exists()) {
       const doc = {...snapshot.data(), id: snapshot.id}
-      console.log(doc)
       setItem(doc)
     }
   })

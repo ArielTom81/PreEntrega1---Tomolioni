@@ -10,7 +10,6 @@ import Forms from './components/Forms/Forms.jsx'
 
 function App() {
 
-
   return (
     <div className='navegacion-carrito'>
       <CartProvider>
@@ -26,7 +25,7 @@ function App() {
             path='/category/:categoryTalle'
             element={<ItemListContainer />}
           />
-          <Route className="route"
+          <Route className='route'
             path='/item/:id' 
             element={
               <ItemDetailContainer />
@@ -35,7 +34,7 @@ function App() {
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/carrito' element={<Carrito />} />
           <Route path='/forms' element={<Forms />} />
-          <Route path='*' element={<div>ERROR 404: La página no existe</div>} />{/* acomodar esta para que se vea más linda*/}
+          <Route path='*' element={<div>ERROR 404: La página no existe</div>} />
         </Routes>
         </CartProvider>
     </div>
