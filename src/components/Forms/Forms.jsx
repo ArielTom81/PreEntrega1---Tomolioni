@@ -7,7 +7,8 @@ import Button from '../commons/Button/Button'
 
 const Forms = () => {
 
-const { carrito, precioTotal, } = useContext(CartContext);
+const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext);
+
 const [orderId, setOrderId] = useState(null)
 const [name, setName] = useState('')
 const [email, setEmail] = useState('')
@@ -34,8 +35,18 @@ const handleSubmit = (e) =>{
     }
 
     addDoc(ordersCollection, order).then(({ id }) =>{
-        setOrderId(id)
+        setOrderId(id);
+        vaciarCarrito();
     })
+}
+
+if(orderId)  {
+    return (
+        <div className='container'>
+            <h1>Muchas gracias por su compra!!!!</h1>
+            <h3>Número de pedido: {orderId}</h3>
+        </div>
+    )
 }
 
 return (
@@ -47,7 +58,6 @@ return (
             <input type='number' placeholder='Telefono' onChange={(e)=> setPhone(e.target.value)} />
             <Button type='submit'>Enviar</Button>
         </form>
-        <h3>Order id: {orderId}</h3>
     </>
 )
 }
